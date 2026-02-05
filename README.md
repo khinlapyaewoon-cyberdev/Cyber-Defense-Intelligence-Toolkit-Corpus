@@ -1,4 +1,4 @@
-# 🛡️ Cybersecurity Defense Intelligence Toolkit
+# 🛡️ Cyber Defense Intelligence Toolkit
 
 A **blue-team–focused, ethical security analysis toolkit** that combines control posture assessment, attack signal awareness, and weaponization risk modeling into a single, cohesive defensive workflow.
 
