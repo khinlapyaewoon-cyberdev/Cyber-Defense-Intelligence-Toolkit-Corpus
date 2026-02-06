@@ -4,6 +4,8 @@ A **blue-team–focused, ethical security analysis toolkit** that combines contr
 
 This toolkit is designed for **security architects, blue teams, AppSec engineers, SOC analysts, and GRC professionals** who want structured, explainable, and audit-friendly security intelligence — without exploit generation or offensive payloads.
 
+***Knowledge in corpus can be added.
+
 ---
 
 ## 📦 Toolkit Components
@@ -32,6 +34,7 @@ Assess the presence, gaps, and weaknesses of defensive security controls based o
 * Defensive control gap analysis
 
 **Corpus:** `corpus_scwla.zip`
+***Knowledge in corpus can be added.
 
 ---
 
@@ -63,7 +66,7 @@ Identify **attack class signals and malicious intent indicators** (not exploits)
 * Defensive threat awareness
 
 **Corpus:** `corpus_eapada.zip`
-
+***Knowledge in corpus can be added.
 ---
 
 ### 3️⃣ VWPA – Vulnerability Weaponization Possibility Analyzer
@@ -93,7 +96,7 @@ Analyze **why certain vulnerabilities are valuable to attackers** and how they c
 * Security strategy and roadmap planning
 
 **Corpus:** `corpus_vwpa.zip`
-
+***Knowledge in corpus can be added.
 ---
 
 ## 🧠 How the Toolkit Fits Together
