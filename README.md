@@ -21,6 +21,8 @@ Assess the presence, gaps, and weaknesses of defensive security controls based o
 * Line-level evidence for each detected control
 * Optional internal defensive corpus grounding
 * LLaMA-based defensive-only analysis
+* LLaMA may challenge or expand corpus grounding if choose corpus as helper
+* LLaMA may work itself if don't choose corpus
 * Audit-friendly TXT report output
 
 **Use cases:**
@@ -44,6 +46,9 @@ Identify **attack class signals and malicious intent indicators** (not exploits)
 * MITRE ATT&CK and OWASP Top 10 contextual mapping
 * Lightweight risk scoring for defensive prioritization
 * Optional defensive corpus grounding
+* LLaMA-based defensive-only analysis
+* LLaMA may challenge or expand corpus grounding if choose corpus as helper
+* LLaMA may work itself if don't choose corpus
 * Visual dashboard + structured TXT report
 
 **What it is NOT:**
@@ -72,6 +77,9 @@ Analyze **why certain vulnerabilities are valuable to attackers** and how they c
 * Weaponization value modeling (no exploits, no payloads)
 * Chaining and attacker ROI analysis
 * Early warning indicators for defenders
+* LLaMA-based defensive-only analysis
+* LLaMA may challenge or expand corpus grounding if choose corpus as helper
+* LLaMA may work itself if don't choose corpus
 * Strategic hardening and control improvement guidance
 
 **Philosophy:**
