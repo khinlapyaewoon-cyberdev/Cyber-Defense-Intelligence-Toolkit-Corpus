@@ -35,7 +35,6 @@ Assess the presence, gaps, and weaknesses of defensive security controls based o
 
 **Corpus:** `corpus_scwla.zip`
 ***Knowledge in corpus can be added.
-
 ---
 
 ### 2️⃣ EAPADA – AI Payload Awareness & Defensive Analyzer
