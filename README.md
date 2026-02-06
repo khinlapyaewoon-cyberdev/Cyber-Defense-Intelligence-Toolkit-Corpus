@@ -4,6 +4,7 @@ A **blue-team–focused, ethical security analysis toolkit** that combines contr
 
 This toolkit is designed for **security architects, blue teams, AppSec engineers, SOC analysts, and GRC professionals** who want structured, explainable, and audit-friendly security intelligence — without exploit generation or offensive payloads.
 
+***Corpus txt count: 60 txts
 ***Knowledge in each corpus can be added if need.
 
 ---
