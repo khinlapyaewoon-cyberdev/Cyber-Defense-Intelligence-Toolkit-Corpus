@@ -23,7 +23,7 @@ This repository contains **three independent but complementary tools**, each wit
 
 ---
 
-## 1️⃣ SCWLA – Security Control Weakness & Landscape Analyzer
+## 1️⃣ SCWLA – Security Control Weakness Logic Analyzer
 
 ### 🎯 Purpose
 Assess the presence, gaps, and weaknesses of defensive security controls based on recon or scan output.
@@ -81,7 +81,7 @@ Identify **attack class signals and malicious intent indicators** (not exploits)
 
 ---
 
-## 3️⃣ VWPA – Vulnerability Weaponization Possibility Analyzer
+## 3️⃣ VWPA – Vulnerability Weaponization Projection Analyzer
 
 ### 🎯 Purpose
 Analyze **why vulnerabilities are valuable to attackers** and how they could be weaponized — strictly from a defensive and strategic perspective.
