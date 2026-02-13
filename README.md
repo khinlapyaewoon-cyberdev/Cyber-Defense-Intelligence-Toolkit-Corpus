@@ -4,141 +4,250 @@ A **blue-team–focused, ethical security analysis toolkit** that combines contr
 
 This toolkit is designed for **security architects, blue teams, AppSec engineers, SOC analysts, and GRC professionals** who want structured, explainable, and audit-friendly security intelligence — without exploit generation or offensive payloads.
 
-***Corpus txt count: 60 txts
-***Knowledge in each corpus can be added if need.
+---
+
+## 📊 Project Overview
+
+- **Corpus TXT Count:** 60+ defensive knowledge files  
+- **Extensible Knowledge Design:** Corpus files can be expanded or customized  
+- **AI Engine:** LLaMA via Hugging Face  
+- **Architecture:** Rule-based detection + Structured AI reasoning + Optional knowledge grounding  
+
+The system is modular, explainable, and safe for enterprise defensive environments.
 
 ---
 
-## 📦 Toolkit Components
+# 📦 Toolkit Components
 
-This repository contains **three independent but complementary tools**, each with its own optional defensive knowledge corpus (provided as ZIP files).
+This repository contains **three independent but complementary tools**, each with optional defensive corpus support.
 
-### 1️⃣ SCWLA – Security Control Weakness & Landscape Analyzer
+---
 
-**Purpose:**
+## 1️⃣ SCWLA – Security Control Weakness & Landscape Analyzer
+
+### 🎯 Purpose
 Assess the presence, gaps, and weaknesses of defensive security controls based on recon or scan output.
 
-**Key Capabilities:**
+### 🔎 Key Capabilities
 
-* Rule-based detection of security controls (WAF, Auth, TLS, Logging, IR, etc.)
-* Line-level evidence for each detected control
-* Optional internal defensive corpus grounding
-* LLaMA-based defensive-only analysis
-* LLaMA may challenge or expand corpus grounding if choose corpus as helper
-* LLaMA may work itself if don't choose corpus
-* Audit-friendly TXT report output
+- Rule-based detection of security controls (WAF, Authentication, TLS, Logging, IR, etc.)
+- Line-level evidence extraction
+- Optional corpus-based grounding
+- LLaMA-based defensive-only reasoning
+- Structured `.txt` report output (audit-friendly)
 
-**Use cases:**
+### 🧪 Use Cases
 
-* Security architecture reviews
-* Pre-audit readiness checks
-* Defensive control gap analysis
+- Security architecture reviews
+- Pre-audit readiness checks
+- Defensive control gap analysis
 
 **Corpus:** `corpus_scwla.zip`
-***Knowledge in each corpus can be added if need.
+
 ---
 
-### 2️⃣ EAPADA – AI Payload Awareness & Defensive Analyzer
+## 2️⃣ EAPADA – AI Payload Awareness & Defensive Analyzer
 
-**Purpose:**
-Identify **attack class signals and malicious intent indicators** (not exploits) within recon, logs, or scan data.
+### 🎯 Purpose
+Identify **attack class signals and malicious intent indicators** (not exploits) within recon data, logs, or scan output.
 
-**Key Capabilities:**
+### 🔎 Key Capabilities
 
-* Detection of payload *classes* (Injection, Auth abuse, Logic flaws, DoS indicators, etc.)
-* MITRE ATT&CK and OWASP Top 10 contextual mapping
-* Lightweight risk scoring for defensive prioritization
-* Optional defensive corpus grounding
-* LLaMA-based defensive-only analysis
-* LLaMA may challenge or expand corpus grounding if choose corpus as helper
-* LLaMA may work itself if don't choose corpus
-* Visual dashboard + structured TXT report
+- Detection of payload *classes*:
+  - Injection signals
+  - Authentication abuse
+  - Logic manipulation
+  - DoS indicators
+  - Enumeration patterns
+- MITRE ATT&CK contextual mapping
+- OWASP Top 10 contextual mapping
+- Lightweight defensive risk scoring
+- Optional corpus grounding
+- Visual dashboard + structured `.txt` report
 
-**What it is NOT:**
+### 🚫 What It Is NOT
 
-* ❌ Exploit generator
-* ❌ Payload crafting tool
+- ❌ Exploit generator  
+- ❌ Payload crafting tool  
+- ❌ Weapon builder  
 
-**Use cases:**
+### 🧪 Use Cases
 
-* SOC alert triage
-* AppSec log review
-* Defensive threat awareness
+- SOC alert triage
+- AppSec log review
+- Threat signal awareness
 
 **Corpus:** `corpus_eapada.zip`
-***Knowledge in each corpus can be added if need.
+
 ---
 
-### 3️⃣ VWPA – Vulnerability Weaponization Possibility Analyzer
+## 3️⃣ VWPA – Vulnerability Weaponization Possibility Analyzer
 
-**Purpose:**
-Analyze **why certain vulnerabilities are valuable to attackers** and how they could be *weaponized*, strictly from a defensive and strategic perspective.
+### 🎯 Purpose
+Analyze **why vulnerabilities are valuable to attackers** and how they could be weaponized — strictly from a defensive and strategic perspective.
 
-**Key Capabilities:**
+### 🔎 Key Capabilities
 
-* Detection of pre-exploit vulnerability conditions
-* Weaponization value modeling (no exploits, no payloads)
-* Chaining and attacker ROI analysis
-* Early warning indicators for defenders
-* LLaMA-based defensive-only analysis
-* LLaMA may challenge or expand corpus grounding if choose corpus as helper
-* LLaMA may work itself if don't choose corpus
-* Strategic hardening and control improvement guidance
+- Detection of vulnerability preconditions
+- Strategic weaponization value modeling (no exploit steps)
+- Attack chaining and attacker ROI reasoning
+- Early warning indicators
+- Defensive hardening guidance
+- Optional corpus grounding
 
-**Philosophy:**
+### 🧠 Philosophy
 
-> *Think like an attacker, respond like a defender.*
+> **Think like an attacker. Respond like a defender.**
 
-**Use cases:**
+### 🧪 Use Cases
 
-* Threat modeling
-* Risk prioritization
-* Security strategy and roadmap planning
+- Threat modeling
+- Risk prioritization
+- Security roadmap planning
 
 **Corpus:** `corpus_vwpa.zip`
-***Knowledge in each corpus can be added if need.
----
-
-## 🧠 How the Toolkit Fits Together
-
-| Tool   | Core Question Answered                                         |
-| ------ | -------------------------------------------------------------- |
-| SCWLA  | *What defensive controls do we have, and how strong are they?* |
-| EAPADA | *What kinds of attack behaviors or probes are we seeing?*      |
-| VWPA   | *Which weaknesses are most likely to be weaponized — and why?* |
-
-Together, they form a **defensive intelligence loop**:
-
-1. Control posture awareness
-2. Attack signal awareness
-3. Weaponization risk prioritization
 
 ---
 
-## 🚀 Getting Started
+# 🧠 AI Knowledge Modes (Flexible Corpus Options)
 
-### Requirements
+Each tool supports **four knowledge configurations**, allowing flexible defensive reasoning:
 
-* Python 3.9+
-* Streamlit
-* `huggingface_hub`
-* Matplotlib
+---
+
+## 🔹 Option 1 — Independent AI Mode (No Corpus)
+
+- No corpus selected
+- LLaMA reasons using its pretrained knowledge
+- Useful for general analysis
+- Best for quick assessments or research scenarios
+**Behavior:**  
+LLaMA reasons independently.
+---
+
+## 🔹 Option 2 — Internal Corpus Mode
+
+- Uses built-in corpus directory (e.g., `corpus_scwla/`)
+- Ideal for standardized internal defensive knowledge
+- Organization-controlled documentation
+- AI uses corpus as enrichment, not blind grounding
+**Behavior:**  
+LLaMA enriches its reasoning using internal corpus  
+AND still reasons independently beyond corpus content.
+---
+
+## 🔹 Option 3 — Uploaded Corpus (ZIP)
+
+- Upload custom corpus ZIP file
+- Extracts `.txt` files dynamically
+- Useful for:
+  - Client-specific documentation
+  - Audit references
+  - Project-based knowledge sets
+**Behavior:**  
+LLaMA enriches its reasoning using uploaded corpus  
+AND reasons independently beyond corpus content.
+---
+
+## 🔹 Option 4 — Uploaded Multi-Corpora (ZIP)
+
+- Upload custom corpora ZIP which contains multi corpus
+- Extract all files dynamically
+**Behavior:**  
+LLaMA enriches its reasoning using uploaded corpora  
+AND reasons independently beyond corpora content.
+
+---
+
+# When multiple options are selected:
+**Behavior:**
+
+1. All selected sources are merged
+2. LLaMA receives merged corpus context
+3. LLaMA enriches reasoning using combined knowledge
+4. LLaMA still reasons independently and may expand beyond corpus content
+
+```python
+merged_corpus = "\n\n".join(corpus_blocks)
+use_corpus_flag = bool(corpus_blocks)
+```
+
+- AI uses combined defensive knowledge
+- Best for enterprise environments with layered documentation
+
+---
+
+# 🧠 Important Reasoning Design Principle
+
+This toolkit does **NOT** force strict grounding.
+
+If any corpus option is selected:
+
+- LLaMA uses corpus as enrichment
+- LLaMA may expand, challenge, or refine corpus knowledge
+- LLaMA still performs independent reasoning
+
+If all options are selected:
+
+1. Corpus sources are merged first  
+2. LLaMA receives unified defensive knowledge  
+3. LLaMA enriches reasoning  
+4. LLaMA reasons independently  
+
+Corpus is **supportive knowledge**, not a restriction layer.
+
+---
+
+# 🔄 Defensive Intelligence Loop
+
+
+
+ SCWLA  | What defensive controls exist, and how strong are they?
+ EAPADA | What attack behaviors or malicious signals are present?
+ VWPA   | Which weaknesses are most likely to be weaponized — and why?
+
+Together they provide:
+
+1. **Control posture awareness**
+2. **Attack signal awareness**
+3. **Weaponization risk prioritization**
+
+Structured. Explainable. Defensive.
+
+---
+
+# 🚀 Getting Started
+
+## Requirements
+
+- Python 3.9+
+- Streamlit
+- huggingface_hub
+- matplotlib
 
 ```bash
 pip install streamlit huggingface_hub matplotlib
 ```
 
-### Environment Variable (Required)
+---
 
-For security reasons, **do not hard-code tokens**.
+## 🔐 Environment Variable (Required)
 
+Never hard-code API tokens.
+
+### macOS / Linux
 ```bash
 export HF_TOKEN=hf_xxxxxxxxxxxxx
-# or on Windows
+```
+
+### Windows
+```bash
 setx HF_TOKEN hf_xxxxxxxxxxxxx
 ```
 
-### Running a Tool
+---
+
+## ▶ Running a Tool
 
 ```bash
 streamlit run scwla_corpus.py
@@ -146,78 +255,98 @@ streamlit run eapada_corpus.py
 streamlit run vwpa_corpus.py
 ```
 
-Unzip the corresponding corpus ZIP into the expected directory before running.
+Before running:
+- Unzip internal corpus folders if required
+- Or upload corpus ZIP inside the UI
 
 ---
 
-## 🔐 Ethical & Defensive Scope
+# 🔒 Ethical & Defensive Scope
 
 This toolkit is:
 
-* ✅ Defensive-only
-* ✅ Ethical by design
-* ✅ Safe for blue-team and enterprise environments
+- ✅ Defensive-only
+- ✅ Ethical by design
+- ✅ Enterprise-safe
+- ✅ Audit-friendly
 
 It intentionally avoids:
 
-* Exploit steps
-* Payload construction
-* Weapon development
+- Exploit instructions
+- Payload construction
+- Weapon development
+- Attack automation
 
-All AI reasoning is constrained to **defensive analysis, risk understanding, and mitigation guidance**.
+AI reasoning is strictly constrained to:
+
+- Risk analysis
+- Strategic understanding
+- Defensive mitigation guidance
 
 ---
 
-## 📄 Output & Reporting
+# 📄 Output & Reporting
 
 Each tool produces:
 
-* On-screen structured analysis
-* Downloadable `.txt` reports suitable for:
-
-  * Audits
-  * Architecture reviews
-  * Incident documentation
-
----
-
-## 🧭 Intended Audience
-
-* Blue Team Analysts
-* SOC Engineers
-* Application Security Engineers
-* Security Architects
-* GRC & Audit Teams
-* Defensive Security Researchers
+- On-screen structured analysis
+- Downloadable `.txt` reports suitable for:
+  - Security audits
+  - Architecture documentation
+  - Incident records
+  - Risk assessments
 
 ---
 
-## ⚠️ Disclaimer
+# 🧭 Intended Audience
 
-This toolkit is intended **solely for defensive security analysis and education**. It must only be used on systems you own or have explicit authorization to assess.
+- Blue Team Analysts
+- SOC Engineers
+- Application Security Engineers
+- Security Architects
+- GRC & Audit Teams
+- Defensive Security Researchers
 
 ---
 
-## 📬 Contribution & Extension
+# 🧩 Extensibility
 
-The toolkit is modular by design:
+The toolkit is modular and extensible:
 
-* New controls, classes, or vulnerability models can be added easily
-* Corpus files allow domain-specific defensive knowledge
+- Add new detection rules
+- Expand vulnerability modeling
+- Extend corpus knowledge base
+- Integrate into SOC workflows
+- Add custom scoring logic
 
 Pull requests focused on **defensive improvements** are welcome.
 
 ---
 
-🛡️ *Defensive security is not about knowing every exploit — it’s about understanding risk, intent, and control.*
+# ⚠️ Disclaimer
+
+This toolkit is intended **solely for defensive security analysis and education**.
+
+Use only on systems you own or have explicit authorization.
+
+The author is not responsible for misuse.
 
 ---
 
-👤 Author
-Khin La Pyae Woon
-AI-Enhanced Ethical Hacking | Cybersecurity | Digital Forensic | Analyze | Developing
+# 👤 Author
 
-🌐 Portfolio: https://khinlapyaewoon-cyberdev.vercel.app
-🔗 LinkedIn: www.linkedin.com/in/khin-la-pyae-woon-ba59183a2
-💬 WhatsApp: https://wa.me/qr/MJYX74CQ5VA4D1
+**Khin La Pyae Woon**  
+AI-Enhanced Ethical Hacking | Cybersecurity | Digital Forensic | Analyze | Developing 
 
+🌐 Portfolio:  
+https://khinlapyaewoon-cyberdev.vercel.app  
+
+🔗 LinkedIn:  
+https://www.linkedin.com/in/khin-la-pyae-woon-ba59183a2  
+
+💬 WhatsApp:  
+https://wa.me/qr/MJYX74CQ5VA4D1  
+
+---
+
+🛡️ *Defensive security is not about knowing every exploit — it’s about understanding risk, intent, and control.*
