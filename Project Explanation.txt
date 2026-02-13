@@ -1,0 +1,114 @@
+Cyber Defense Intelligence Toolkit includes 3 independent tools:
+SCWLA: Security Control Weakness Logic Analyzer
+EAPADA: Ethical AI Payload Awareness & Defensive Analyzer
+VWPA: Vulnerability Weaponization Projection Analyzer
+
+For SCWLA,
+To identify what defensive security controls exist and what are original weakness of themselves
+
+Steps:
+Parses recon data of website
+
+Uses rule-based detection (e.g., WAF, TLS, authentication indicators)
+
+Extracts line-level evidence
+
+Use LLaMA for weakness analysis and contextual defensive analysis
+
+Optionally enriches reasoning with corpus/corpora knowledge
+
+
+
+For EAPADA,
+To detects which vulns exist and which vulns cause possible attack behavior signals and malicious intent patterns.
+
+Steps:
+Detects payload classes (Injection, Auth abuse, Logic flaws, DoS indicators) based on vulns
+
+Maps findings to MITRE ATT&CK and OWASP categories
+
+Applies lightweight risk scoring
+
+Use LLaMA for contextual defensive analysis
+
+Optionally enriches reasoning with corpus/corpora knowledge
+
+
+For VWPA,
+To analyzes which vulns exist and why vulnerabilities are attractive to attackers and how they could be strategically weaponized.
+
+Steps:
+Detects vulnerability conditions
+
+Evaluates attacker value and chaining potential
+
+Uses LLaMA to analyze strategic weaponization and to provide defensive analysis
+
+Optionally enriches reasoning with corpus/corpora knowledge
+
+
+Include 3 options:
+Option 1 (No internal corpus or dynamic corpus/corpora zip)
+
+LLaMA reasons using only its pretrained knowledge
+
+It analyzes detected signals and generates defensive insights
+
+Works like an expert answering from experience
+
+
+Option 2 (Internal Corpus, corpus_scwla for SCWLA tool, corpus_eapada for EAPADA tool, corpus_vwpa for VWPA tool)
+
+Internal corpus is appended to the prompt
+
+LLaMA uses it as supporting knowledge
+
+It may expand or refine beyond corpus content
+
+
+Option 3 (Dynamically Uploaded Corpus/Corpora zip)
+
+Uploaded documents are appended
+
+LLaMA enriches reasoning using that documentation
+
+Still performs independent reasoning
+
+
+***Internal Corpus, dynamically uploaded corpus/corpora zip are used as optional because 
+LLaMA is a pretrained NLP model trained on massive internet-scale text data.
+
+So, it already understands Cybersecurity concepts, vulns, attack patterns, defensive practices, risk reasoning and more for Cybersecurity industry.
+This toolkit is cyber defensive intelligence toolkit for 2 dimensions(security team dimension, attacker dimension). 
+2 dimensions because first, 
+if security teams, they can prepare to prevent based on vulns before big attack and 
+next, if attacker, if knows which vulns can be recovered with which preventions so attacker can go to another leak or ways by avoiding preventions. 
+
+
+
+For SCWLA, if security team, if which security controls existed in website and which weakness of themselves are known, security team can do preventions for them.
+If attacker, can attack via weakness of these controls and go to another by avoiding these preventions.
+
+For EAPADA, if security team, if which vulns can cause which attack payloads, security team can prevent on vulns.
+If attacker, can attack based on preventions for which vulns and go to another leak by avoiding these preventions.
+
+For VWPA, if security team, if which vulns can cause which all possible attack weaponizations, security team can prevent.
+If attacker, can attack based on preventions for which vulns and go to another leak by avoiding these preventions.
+
+So, LLaMA's indenpendently reasoning/enriching on optional corpus/corpora knowledge is enough for intention of this toolkit as reasoning engine.
+
+
+***LLaMA as NLP,
+Toolkit firstly detects vulnerabilities, payload classes, or control gaps using rule-based logic.
+
+Optionally, it merges corpus knowledge (internal, uploaded, or multi-corpora) into a single prompt.
+
+LLaMA receives a text prompt combining-
+
+Detected signals (findings)
+
+Vulnerability or payload class names
+
+Optional corpus knowledge
+
+Instructions for defensive-only reasoning
